@@ -1,9 +1,16 @@
-object Cypher {
+object Cypher extends App {
 
-  def keyMap(character: String) : Int = {
-    character match {
-      case "a" => 1
+  def numberReturn(letter: Char) : Int = {
+    val generateMap = ('a' to 'z')
+      .zip(1 to 26)
+      .toMap
 
-    }
+    generateMap(letter)
   }
+
+  def stringConverter(word: String) : List[Int] = {
+    word.toList.map(x => numberReturn(x))
+
+  }
+
 }
